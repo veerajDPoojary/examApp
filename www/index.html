@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+	<title>&nbsp;</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova/cordova.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/jquery.countdown.css"> 
+        <style type="text/css">
+						.center-wrapper{
+								text-align: center;
+										}
+						.center-wrapper * {
+								margin: 0 auto;
+										} 
+						#defaultCountdown { width: 240px; height: 45px; }
+		</style>
+		<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+        <script type="text/javascript">
+	$(function () {
+				var austDay = new Date();
+				austDay = new Date(austDay.getFullYear() + 0, 12-1, 10);
+				$('#defaultCountdown').countdown({until: austDay});
+				$('#year').text(austDay.getFullYear());
+			});
+		</script>
+        
+</head>
+<body>
+	<div id="home" data-role="page">
+    	<div data-role="header">
+    	    <h1>Home</h1>
+   	    </div>
+    	<div data-role="content" style="padding:0px;">
+       	
+         	   <a href="#page-1" data-role="button" data-theme="b">Choose Subjects</a><br/>
+               <a href="#page-2" data-role="button" data-theme="b">Exam Time Table</a><br/>
+               <a href="#page-3" data-role="button" data-theme="b">Days Left</a><br/>
+      	 
+    	</div>
+	</div>
+
+<!--page 1-->
+<div id="page-1" data-role="page" data-theme="b">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>Choose Subject</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            <li><a href="#se">Software Engineering</a></li>
+            <li><a href="#ss">System Software</a></li>
+            <li><a href="#os">Operating Systems</a></li>
+            <li><a href="#dbms">Database Management System</a></li>
+            <li><a href="#cn">Computer Networks-1</a></li>
+            <li><a href="#flat">FLAT</a></li>
+   		</ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid">Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/page 1-->
+
+<!--page 2-->
+<div id="page-2" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>Time Table</h1>
+    </div>
+    <div data-role="content">
+        <table data-role="table" id="my-table" data-mode="columntoggle">
+              <thead>
+                <tr>
+                  <th>Date<br/>&nbsp;</th>
+                  <th>&nbsp;</th>
+                  <th>Subject<br/>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10-12-2013<br/>Tuesday<br/>&nbsp;</td>
+                   <td>&nbsp;</td> 
+                  <td><a href="#" data-rel="external">Software Engineering</a></td>
+                </tr>
+                <tr>
+                  <td>13-12-2013<br/>Friday<br/>&nbsp;</td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td><a href="#" data-rel="external">System Software</a></td>
+                </tr>
+                <tr>
+                  <td>17-12-2013<br/>Tuesday<br/>&nbsp;</td>
+                   <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">Operating Sysytem</a></td>
+                </tr>
+                <tr>
+                  <td>20-12-2013<br/>Friday<br/>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">DBMS</a></td>
+                </tr>
+                <tr>
+                  <td>24-12-2013<br/>Tuesday<br/>&nbsp;</td>
+                 <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">Computer Networks-1</a></td>
+                </tr><tr>
+                  <td>28-12-2013<br/>Saturday<br/>&nbsp;</td>
+                   <td>&nbsp;</td>
+                  <td><a href="#" data-rel="external">FLAT</a></td>
+                </tr>
+              </tbody>
+		</table>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid" class="ui-btn-active">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid">Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/page 2-->
+<!--page 3-->
+<div id="page-3" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>Days left</h1>
+    </div>
+    <div data-role="content">
+         <div class="center-wrapper">
+             <div id="1st"><p><strong>&nbsp;<br/>DAYS LEFT !!</strong></p></div>
+       		<div id="defaultCountdown"></div>
+            <div id="2nd"><p>&nbsp;<br/>So Hurry Up !!</p><p>&nbsp;<br/> Start studying from today</p></div>
+       </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" class="ui-btn-active">Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\page3-->
+<!--se-->
+<div id="se" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>SE</h1>
+    </div>
+     <div data-role="content">
+     <div data-role="fieldcontain">
+  <fieldset data-role="controlgroup">
+    <legend>Part A</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-1 Overview</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-2 Critical system software process</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-3 Requirements</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-4 System Models,Project Management</label>
+    </fieldset>
+    <fieldset data-role="controlgroup">
+    <legend>&nbsp;<br/>Part B</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">Unit-5 Software Design</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-6 Development</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">unit-7 Verification & Validation</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">Unit-8 Management</label>
+    </fieldset>
+</div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" >Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\se-->
+<!--ss -->
+<div id="ss" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>SS</h1>
+    </div>
+    <div data-role="content">
+    <fieldset data-role="controlgroup">
+    <legend>Part A</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-1 Machine Architecture</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-2 Assembler-1</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-3 Assembler-2</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-4 Loaders & Linkers</label>
+    </fieldset>
+    <fieldset data-role="controlgroup">
+    <legend>&nbsp;<br/>Part B</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">Unit-5 Editors & Debugging Systems</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-6 Macro Processor</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-7 Lex & Yacc 1</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-8 Lex & Yacc 2</label>
+    </fieldset>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" >Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\ss-->
+<!--os-->
+<div id="os" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>OS</h1>
+    </div>
+     <div data-role="content">
+     <fieldset data-role="controlgroup">
+    <legend>Part A</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-1 Intoduction to OS, System structures</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-2 Process Management</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-3 Process Syncronization</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-4 Deadlocks</label>
+    </fieldset>
+    <fieldset data-role="controlgroup">
+    <legend>&nbsp;<br/>Part B</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-5 Memory Management</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-6 File systems, Implementation of File system</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-7 Secondary storage structures ,Protection</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-8 Case study:The linux OS</label>
+    </fieldset>
+    </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" >Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\os-->
+<!--DBMS-->
+<div id="dbms" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>DBMS</h1>
+    </div>
+    <div data-role="content">
+    <fieldset data-role="controlgroup">
+    <legend>Part A</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-1 Introduction</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-2 Entity-Relationship Model</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-3 Relational Model & Relational Algebra</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-4 SQL-1</label>
+    </fieldset>
+    <fieldset data-role="controlgroup">
+    <legend>&nbsp;<br/>Part B</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-5 SQL-2</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-6 Database design-1</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-7 Database Design-2</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-8 Transaction Management</label>
+    </fieldset>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" >Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\DBMS-->
+<!--CN-->
+<div id="cn" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>CN-1</h1>
+    </div>
+    <div data-role="content">
+    <fieldset data-role="controlgroup">
+    <legend>Part A</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-1 Introduction</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-2 Physical Layer-1</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-3 Physical layer-2 & Switching</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-4 Data Link Layer-1</label>
+    </fieldset>
+    <fieldset data-role="controlgroup">
+    <legend>&nbsp;<br/>Part B</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-5 Data Link Layer-2</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-6 Multiple Access & Ethernet</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-7 Wireless LANs & Cellular Network</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-8 Network Layer</label>
+    </fieldset>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" >Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\CN-->
+<!--FLAT-->
+<div id="flat" data-role="page">
+    <div data-role="header">
+        <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <h1>FLAT</h1>
+    </div>
+    <div data-role="content">
+    <fieldset data-role="controlgroup">
+    <legend>Part A</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-1 Introduction to Finite Automata</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-2 Finite Automata, Regular Expressions</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-3 Regular Languages, Properties Of Regular Languages</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-4 Context Free Grammars & Languages</label>
+    </fieldset>
+    <fieldset data-role="controlgroup">
+    <legend>&nbsp;<br/>Part B</legend>
+      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <label for="checkbox-1a">UNIT-5 PushDown Automata</label>
+ 
+      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <label for="checkbox-2a">UNIT-6 Properties Of CFG</label>
+ 
+      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <label for="checkbox-3a">UNIT-7 Introduction to Turing Machine</label>
+ 
+      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <label for="checkbox-4a">UNIT-8 Undecidability</label>
+    </fieldset>
+    </div>
+         
+ 
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page-1" data-role="tab" data-icon="grid" class="ui-btn-active">Subjects</a></li>
+                <li><a href="#page-2" data-role="tab" data-icon="grid">Time Table</a></li>
+                <li><a href="#page-3" data-role="tab" data-icon="grid" >Days Left</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--\FLAT-->
+
+	</body>
+<script>
+$("a[data-role=tab]").each(function () {
+    var anchor = $(this);
+    anchor.bind("click", function () {
+        $.mobile.changePage(anchor.attr("href"), {
+            transition: "none",
+            changeHash: false
+        });
+        return false;
+    });
+});
+
+$("div[data-role=page]").bind("pagebeforeshow", function (e, data) {
+    $.mobile.silentScroll(0);
+    $.mobile.changePage.defaults.transition = 'slide';
+});
+</script>
+</html>
