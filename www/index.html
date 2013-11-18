@@ -9,6 +9,43 @@
 		<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
 		<script src="js/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+          <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() { 
+			
+				$('.custom').change(function(){
+					var name = this.name;
+					
+					 if($(this).is(':checked')){
+						 console.log("checked");
+					window.localStorage.setItem(this.name,'checked');
+			
+					  } else {
+						 window.localStorage.removeItem(this.name);
+					  }
+				});
+			
+			
+				$(document).ready(function () {
+					$('.custom').each(function() {	
+		  $(this).prop('checked',localStorage.getItem(this.name) == 'checked');
+					});
+				});
+		
+						
+	}
+	
+
+
+    </script>
+
+        
         <link rel="stylesheet" type="text/css" href="js/jquery.countdown.css"> 
         <style type="text/css">
 						.center-wrapper{
@@ -91,31 +128,31 @@
                 <tr>
                   <td>10-12-2013<br/>Tuesday<br/>&nbsp;</td>
                    <td>&nbsp;</td> 
-                  <td><a href="#" data-rel="external">Software Engineering</a></td>
+                  <td><a href="#se" data-rel="external">Software Engineering</a></td>
                 </tr>
                 <tr>
                   <td>13-12-2013<br/>Friday<br/>&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><a href="#" data-rel="external">System Software</a></td>
+                  <td><a href="#ss" data-rel="external">System Software</a></td>
                 </tr>
                 <tr>
                   <td>17-12-2013<br/>Tuesday<br/>&nbsp;</td>
                    <td>&nbsp;</td>
-                  <td><a href="#" data-rel="external">Operating Sysytem</a></td>
+                  <td><a href="#os" data-rel="external">Operating Sysytem</a></td>
                 </tr>
                 <tr>
                   <td>20-12-2013<br/>Friday<br/>&nbsp;</td>
                   <td>&nbsp;</td>
-                  <td><a href="#" data-rel="external">DBMS</a></td>
+                  <td><a href="#dbms" data-rel="external">DBMS</a></td>
                 </tr>
                 <tr>
                   <td>24-12-2013<br/>Tuesday<br/>&nbsp;</td>
                  <td>&nbsp;</td>
-                  <td><a href="#" data-rel="external">Computer Networks-1</a></td>
+                  <td><a href="#cn" data-rel="external">Computer Networks-1</a></td>
                 </tr><tr>
                   <td>28-12-2013<br/>Saturday<br/>&nbsp;</td>
                    <td>&nbsp;</td>
-                  <td><a href="#" data-rel="external">FLAT</a></td>
+                  <td><a href="#flat" data-rel="external">FLAT</a></td>
                 </tr>
               </tbody>
 		</table>
@@ -159,37 +196,42 @@
 <div id="se" data-role="page">
     <div data-role="header">
         <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <a href="#popupBasic"  data-icon="info" data-rel="popup">Info</a>
+ 
+        <div data-role="popup" id="popupBasic">
+          <p>Check the box of the units that you covered.<p>
+        </div> 
         <h1>SE</h1>
     </div>
      <div data-role="content">
      <div data-role="fieldcontain">
   <fieldset data-role="controlgroup">
     <legend>Part A</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
-      <label for="checkbox-1a">UNIT-1 Overview</label>
+      <input type="checkbox" name="se1" id="se1" class="custom" />
+      <label for="se1">UNIT-1 Overview</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
-      <label for="checkbox-2a">UNIT-2 Critical system software process</label>
+      <input type="checkbox" name="se2" id="se2" class="custom" />
+      <label for="se2">UNIT-2 Critical system software process</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
-      <label for="checkbox-3a">UNIT-3 Requirements</label>
+      <input type="checkbox" name="se3" id="se3" class="custom" />
+      <label for="se3">UNIT-3 Requirements</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
-      <label for="checkbox-4a">UNIT-4 System Models,Project Management</label>
+      <input type="checkbox" name="se4" id="se4" class="custom" />
+      <label for="se4">UNIT-4 System Models,Project Management</label>
     </fieldset>
     <fieldset data-role="controlgroup">
     <legend>&nbsp;<br/>Part B</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
-      <label for="checkbox-1a">Unit-5 Software Design</label>
+      <input type="checkbox" name="se5" id="se5" class="custom" />
+      <label for="se5">Unit-5 Software Design</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
-      <label for="checkbox-2a">UNIT-6 Development</label>
+      <input type="checkbox" name="se6" id="se6" class="custom" />
+      <label for="se6">UNIT-6 Development</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
-      <label for="checkbox-3a">unit-7 Verification & Validation</label>
+      <input type="checkbox" name="se7" id="se7" class="custom" />
+      <label for="se7">unit-7 Verification & Validation</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
-      <label for="checkbox-4a">Unit-8 Management</label>
+      <input type="checkbox" name="se8" id="se8" class="custom" />
+      <label for="se8">Unit-8 Management</label>
     </fieldset>
 </div>
     </div>
@@ -208,36 +250,41 @@
 <div id="ss" data-role="page">
     <div data-role="header">
         <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <a href="#popupBasic"  data-icon="info" data-rel="popup">Info</a>
+ 
+        <div data-role="popup" id="popupBasic">
+          <p>Check the box of the units that you covered.<p>
+        </div> 
         <h1>SS</h1>
     </div>
     <div data-role="content">
     <fieldset data-role="controlgroup">
     <legend>Part A</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
-      <label for="checkbox-1a">UNIT-1 Machine Architecture</label>
+      <input type="checkbox" name="ss1" id="ss1" class="custom" />
+      <label for="ss1">UNIT-1 Machine Architecture</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
-      <label for="checkbox-2a">UNIT-2 Assembler-1</label>
+      <input type="checkbox" name="ss2" id="ss2" class="custom" />
+      <label for="ss2">UNIT-2 Assembler-1</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
-      <label for="checkbox-3a">UNIT-3 Assembler-2</label>
+      <input type="checkbox" name="ss3" id="ss3" class="custom" />
+      <label for="ss3">UNIT-3 Assembler-2</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
-      <label for="checkbox-4a">UNIT-4 Loaders & Linkers</label>
+      <input type="checkbox" name="ss4" id="ss4" class="custom" />
+      <label for="ss4">UNIT-4 Loaders & Linkers</label>
     </fieldset>
     <fieldset data-role="controlgroup">
     <legend>&nbsp;<br/>Part B</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
-      <label for="checkbox-1a">Unit-5 Editors & Debugging Systems</label>
+      <input type="checkbox" name="ss5" id="ss5" class="custom" />
+      <label for="ss5">Unit-5 Editors & Debugging Systems</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
-      <label for="checkbox-2a">UNIT-6 Macro Processor</label>
+      <input type="checkbox" name="ss6" id="ss6" class="custom" />
+      <label for="ss6">UNIT-6 Macro Processor</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
-      <label for="checkbox-3a">UNIT-7 Lex & Yacc 1</label>
+      <input type="checkbox" name="ss7" id="ss7" class="custom" />
+      <label for="ss7">UNIT-7 Lex & Yacc 1</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
-      <label for="checkbox-4a">UNIT-8 Lex & Yacc 2</label>
+      <input type="checkbox" name="ss8" id="ss8" class="custom" />
+      <label for="ss8">UNIT-8 Lex & Yacc 2</label>
     </fieldset>
     </div>
     <div data-role="footer" data-position="fixed">
@@ -255,35 +302,40 @@
 <div id="os" data-role="page">
     <div data-role="header">
         <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <a href="#popupBasic"  data-icon="info" data-rel="popup">Info</a>
+ 
+        <div data-role="popup" id="popupBasic">
+          <p>Check the box of the units that you covered.<p>
+        </div> 
         <h1>OS</h1>
     </div>
      <div data-role="content">
      <fieldset data-role="controlgroup">
     <legend>Part A</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="os1" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-1 Intoduction to OS, System structures</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="os2" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-2 Process Management</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="os3" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-3 Process Syncronization</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="os4" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-4 Deadlocks</label>
     </fieldset>
     <fieldset data-role="controlgroup">
     <legend>&nbsp;<br/>Part B</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="os5" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-5 Memory Management</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="os6" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-6 File systems, Implementation of File system</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="os7" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-7 Secondary storage structures ,Protection</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="os8" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-8 Case study:The linux OS</label>
     </fieldset>
     </div>
@@ -303,35 +355,40 @@
 <div id="dbms" data-role="page">
     <div data-role="header">
         <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <a href="#popupBasic"  data-icon="info" data-rel="popup">Info</a>
+ 
+        <div data-role="popup" id="popupBasic">
+          <p>Check the box of the units that you covered.<p>
+        </div> 
         <h1>DBMS</h1>
     </div>
     <div data-role="content">
     <fieldset data-role="controlgroup">
     <legend>Part A</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="dbms1" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-1 Introduction</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="dbms2" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-2 Entity-Relationship Model</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="dbms3" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-3 Relational Model & Relational Algebra</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="dbms4" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-4 SQL-1</label>
     </fieldset>
     <fieldset data-role="controlgroup">
     <legend>&nbsp;<br/>Part B</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="dbm5s" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-5 SQL-2</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="dbms6" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-6 Database design-1</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="dbms7" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-7 Database Design-2</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="dbms8" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-8 Transaction Management</label>
     </fieldset>
     </div>
@@ -350,35 +407,40 @@
 <div id="cn" data-role="page">
     <div data-role="header">
         <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <a href="#popupBasic"  data-icon="info" data-rel="popup">Info</a>
+ 
+        <div data-role="popup" id="popupBasic">
+          <p>Check the box of the units that you covered.<p>
+        </div> 
         <h1>CN-1</h1>
     </div>
     <div data-role="content">
     <fieldset data-role="controlgroup">
     <legend>Part A</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="cn1" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-1 Introduction</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="cn2" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-2 Physical Layer-1</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="cn3" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-3 Physical layer-2 & Switching</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="cn4" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-4 Data Link Layer-1</label>
     </fieldset>
     <fieldset data-role="controlgroup">
     <legend>&nbsp;<br/>Part B</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="cn5" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-5 Data Link Layer-2</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="cn6" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-6 Multiple Access & Ethernet</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="cn7" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-7 Wireless LANs & Cellular Network</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="cn8" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-8 Network Layer</label>
     </fieldset>
     </div>
@@ -397,35 +459,40 @@
 <div id="flat" data-role="page">
     <div data-role="header">
         <a href="#" data-icon="arrow-l" data-iconpos="left" data-rel="back" data-transition="slide" data-direction="reverse">Back</a>
+        <a href="#popupBasic"  data-icon="info" data-rel="popup">Info</a>
+ 
+        <div data-role="popup" id="popupBasic">
+          <p>Check the box of the units that you covered.<p>
+        </div> 
         <h1>FLAT</h1>
     </div>
     <div data-role="content">
     <fieldset data-role="controlgroup">
     <legend>Part A</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="flat1" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-1 Introduction to Finite Automata</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="flat2" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-2 Finite Automata, Regular Expressions</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="flat3" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-3 Regular Languages, Properties Of Regular Languages</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="flat4" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-4 Context Free Grammars & Languages</label>
     </fieldset>
     <fieldset data-role="controlgroup">
     <legend>&nbsp;<br/>Part B</legend>
-      <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+      <input type="checkbox" name="flat5" id="checkbox-1a" class="custom" />
       <label for="checkbox-1a">UNIT-5 PushDown Automata</label>
  
-      <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+      <input type="checkbox" name="flat6" id="checkbox-2a" class="custom" />
       <label for="checkbox-2a">UNIT-6 Properties Of CFG</label>
  
-      <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+      <input type="checkbox" name="flat7" id="checkbox-3a" class="custom" />
       <label for="checkbox-3a">UNIT-7 Introduction to Turing Machine</label>
  
-      <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+      <input type="checkbox" name="flat8" id="checkbox-4a" class="custom" />
       <label for="checkbox-4a">UNIT-8 Undecidability</label>
     </fieldset>
     </div>
